@@ -1,0 +1,259 @@
+/* PETECH WEBSITE STYLING */
+
+/* General settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #172b4d;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* PETECH Watermark */
+body::before {
+    content: "PETECH";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(80px, 18vw, 220px);
+    font-weight: bold;
+    color: rgba(30, 100, 180, 0.06);
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1261a0;
+    letter-spacing: 2px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #172b4d;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #1261a0;
+}
+
+/* General Sections */
+section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #1261a0;
+    margin-bottom: 20px;
+}
+
+section > p {
+    max-width: 750px;
+    margin: 0 auto 25px;
+}
+
+/* Home Section */
+.hero {
+    padding: 120px 8%;
+    background: #f3f8fd;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    color: #12345a;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #1261a0;
+    color: #ffffff;
+    padding: 13px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0b416f;
+}
+
+/* Services and Projects */
+.service-list,
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.service,
+.project {
+    background: #ffffff;
+    padding: 30px 22px;
+    border: 1px solid #e2eaf2;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.service:hover,
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.service h3,
+.project h3 {
+    color: #1261a0;
+    margin-bottom: 12px;
+}
+
+/* About Section */
+.about {
+    background: #f8fbff;
+}
+
+/* Contact Section */
+.contact {
+    background: #f3f8fd;
+}
+
+.contact p {
+    margin-bottom: 12px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .service-list,
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 85px 6%;
+    }
+}
+/* PETECH Footer */
+.site-footer {
+    background: #12345a;
+    color: #ffffff;
+    padding: 55px 8% 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-footer h2,
+.site-footer h3 {
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+
+.footer-brand p,
+.footer-contact p {
+    margin-bottom: 12px;
+    color: #dbe8f5;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.site-footer a {
+    color: #c5e2ff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 35px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #dbe8f5;
+    font-size: 14px;
+}
+
+/* Footer Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
